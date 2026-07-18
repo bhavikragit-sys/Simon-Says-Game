@@ -10,7 +10,6 @@ const h2 = document.querySelector("h2");
 
 document.addEventListener("keydown", function () {
   if (!started) {
-    console.log("Game Started");
     started = true;
     levelUp();
   }
@@ -43,9 +42,6 @@ function levelUp() {
   let randBtn = document.querySelector(`.${randColor}`);
 
   gameSeq.push(randColor);
-
-  console.log("Game Sequence:", gameSeq);
-
   gameFlash(randBtn);
 }
 
@@ -59,9 +55,6 @@ function btnPress() {
 
   let userColor = btn.getAttribute("id");
   userSeq.push(userColor);
-
-  console.log("User Sequence:", userSeq);
-
   checkAns(userSeq.length - 1);
 }
 
@@ -72,8 +65,6 @@ for (let btn of allBtns) {
 }
 
 function checkAns(idx) {
-  console.log(`Current Level: ${level}`);
-
   // Wrong answer
   if (userSeq[idx] !== gameSeq[idx]) {
     document.body.classList.add("game-over");
