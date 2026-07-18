@@ -78,9 +78,6 @@ function checkAns(idx) {
     reset();
     return;
   }
-
-  console.log("Correct!");
-
   // Next Level
   if (userSeq.length === gameSeq.length) {
     setTimeout(levelUp, 500);
